@@ -1,0 +1,101 @@
+body{
+    margin: 0%;
+}
+.main{
+    /* background-color: aqua; */
+    /* height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+.h{
+  
+      /* background-color: black; */
+      /* height: 65vh; */
+      width: 30%;
+      display: flex;
+      gap: 30px;
+   
+    &:has(:hover) img:not(:hover),
+    &:has(:focus) img:not(:focus) {
+        filter: brightness(0.5) contrast(0.5);
+    }
+    position: relative;
+    
+}
+.n1{
+    /* background-color: rgb(255, 0, 136); */
+    gap: 10px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.n2{  right: 37%;
+    bottom: -20%;
+      position: absolute;
+        /* background-color: rgb(255, 0, 136); */
+        gap: 20px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+
+.h1{
+   height: 25vh;
+  
+   
+}
+.h2{
+    height: 25vh;
+
+}
+img{
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transition: clip-path 0.25s, filter 0.75s;
+
+    &:hover,
+    &:focus {
+        clip-path: polygon(0 2%, 100% 0, 100% 100%, 0% 100%);
+
+        z-index: 1;
+        transition: clip-path 0.25s, filter 0.25s;
+    }
+
+    &:focus {
+        outline: 1px dashed black;
+        outline-offset: -5px;
+    }
+    border-radius: 20px;
+}
+
+
+
+/* ------------ mobile responsive degine with the help of media query */
+
+@media screen and (max-width: 600px){
+
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    
+  }
+  .h{
+     width: 80%;
+     /* background-color: aquamarine; */
+     
+  }
+  .h2{
+    display: none;
+  }
+   .n2{
+    top: 25%;
+   }
+
+}
